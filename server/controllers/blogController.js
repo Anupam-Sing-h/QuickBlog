@@ -151,31 +151,31 @@ export const getBlogComments = async(req, res)=>{
 }
 
 //funtin to generate the blog using Gemini-2.5
-// export const generateContent = async (req, res)=>{
-//   try {
-//     const {prompt} = req.body;
-//     const content = await main(prompt + 'Generate a blog content in technical and scientific terms for this topic in simple text format')
-//     res.json({success: true, content})
-//   } catch (error) {
-//     res.json({success: false, message: error.message})
-//   }
-// }
-export const generateContent = async (req, res) => {
-    try {
-        const { prompt } = req.body;
-        if (!prompt) {
-            return res.status(400).json({ success: false, message: 'Prompt is required' });
-        }
-        const topic = prompt;
-        const content = await main(
-            `Write a detailed blog post on the topic: "${topic}". 
-            - Use simple, easy-to-understand language. 
-            - Include an engaging introduction, main content divided into sections, and a concise conclusion. 
-            - Do not include any HTML or special formatting—plain text only. 
-            - Make it informative, professional, and reader-friendly.`
-        );
-        return res.status(200).json({ success: true, content });
-    } catch (error) {
-        return res.status(500).json({ success: false, message: 'Internal server error' });
-    }
-};
+export const generateContent = async (req, res)=>{
+  try {
+    const {prompt} = req.body;
+    const content = await main(prompt + 'Generate a blog content in technical and scientific terms for this topic in simple text format')
+    res.json({success: true, content})
+  } catch (error) {
+    res.json({success: false, message: error.message})
+  }
+}
+// export const generateContent = async (req, res) => {
+//     try {
+//         const { prompt } = req.body;
+//         if (!prompt) {
+//             return res.status(400).json({ success: false, message: 'Prompt is required' });
+//         }
+//         const topic = prompt;
+//         const content = await main(
+//             `Write a detailed blog post on the topic: "${topic}". 
+//             - Use simple, easy-to-understand language. 
+//             - Include an engaging introduction, main content divided into sections, and a concise conclusion. 
+//             - Do not include any HTML or special formatting—plain text only. 
+//             - Make it informative, professional, and reader-friendly.`
+//         );
+//         return res.status(200).json({ success: true, content });
+//     } catch (error) {
+//         return res.status(500).json({ success: false, message: 'Internal server error' });
+//     }
+// };
