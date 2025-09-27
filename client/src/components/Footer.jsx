@@ -10,7 +10,7 @@ const Footer = () => {
                 <p className='max-w-[410px] mt-6'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis expedita magni nisi perferendis, veniam corporis consequuntur minima nam dolor quo.</p>
             </div>
 
-            <div className='flex flex-wrap justify-between w-full md:w-[45] gap-5'>
+            <div className='flex flex-wrap justify-between w-full md:w-[45%] gap-5'>
                 {footer_data.map((section, index)=>(
                     <div key={index}>
                       <h3 className='font-semibold text-base text-gray-900 md:mb-5 mb-2'>{section.title}</h3>
