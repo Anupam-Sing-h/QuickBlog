@@ -16,7 +16,7 @@ await connectDb();
 //app.use(cors())
 app.use(cors({
   // origin: ['http://localhost:5173' , `https://quick-blog-server-mu-three.vercel.app`], // ✅ your frontend origin
-  origin: 'https://quick-blog-server-mu-three.vercel.app',
+  origin: 'https://quick-blog-seven-beta.vercel.app',
   credentials: true                // ✅ allow cookies/auth headers
 }));
 
