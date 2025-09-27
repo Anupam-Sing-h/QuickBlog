@@ -1,0 +1,60 @@
+ import { createContext, useContext, useEffect, useState } from 'react';
+import axiosLib from 'axios';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+
+//Createing a custom Axios instance
+const axios = axiosLib.create({
+  baseURL: 'http://localhost:3000',
+  withCredentials: true,
+});
+
+const AppContext = createContext();
+
+export const AppProvider = ({ children }) => {
+  const navigate = useNavigate();
+
+  const [token, setToken] = useState(null);
+  const [blogs, setBlogs] = useState([]);
+  const [input, setInput] = useState('');
+
+  //Fetching all the blogs
+  const fetchBlogs = async () => {
+    try {
+      const { data } = await axios.get('/api/blog/all');
+      data.success ? setBlogs(data.blogs) : toast.error(data.message);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  //Load token and fetch blogs on mount
+  useEffect(() => {
+    fetchBlogs();
+
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      setToken(storedToken);
+      axios.defaults.headers.common['Authorization'] = `${storedToken}`;
+    }
+  }, []);
+
+  const value = {
+    axios,
+    navigate,
+    token,
+    setToken,
+    blogs,
+    setBlogs,
+    input,
+    setInput,
+  };
+
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+};
+
+//Hook to access context
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAppContext = () => {
+  return useContext(AppContext);
+};
