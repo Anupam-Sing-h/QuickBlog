@@ -15,7 +15,8 @@ await connectDb();
 //Middlewars
 //app.use(cors())
 app.use(cors({
-  origin: ['http://localhost:5173' , `https://quick-blog-server-mu-three.vercel.app`], // ✅ your frontend origin
+  // origin: ['http://localhost:5173' , `https://quick-blog-server-mu-three.vercel.app`], // ✅ your frontend origin
+  origin: 'https://quick-blog-server-mu-three.vercel.app',
   credentials: true                // ✅ allow cookies/auth headers
 }));
 
