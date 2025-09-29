@@ -69,7 +69,7 @@ useEffect(()=>{
 
   return data ?(
     <div className='relative'>
-      <img src="/assets/gradientBackground-BA3Ck2my.png" alt="" className='absolut -top-50 -z-1 opacity-50'/>
+      {/* <img src="/assets/gradientBackground-BA3Ck2my.png" alt="" className='absolut -top-50 -z-1 opacity-50'/> */}
       <Navbar/>
       <div className='text-center mt-20 text-gray-600'>
         <p className='text-primary py-4 font-medium'>Published on {Moment(data.createdAt).format('MMMM Do YYYY')}</p>
