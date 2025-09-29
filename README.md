@@ -20,9 +20,18 @@ Responsive UI: Mobile-first design with Tailwind CSS.
 
 ## 📸 Screenshots
 
-Signup page Screenshot (12)
+Home Page
+<img width="1920" height="1080" alt="Screenshot 2025-09-28 031523" src="https://github.com/user-attachments/assets/08d9e21c-1dd8-4dd2-910d-a86b0985bf47" />
 
-Home page Blog Application
+Login Page 
+<img width="1920" height="1080" alt="Screenshot 2025-09-28 031549" src="https://github.com/user-attachments/assets/fc1f4627-0605-4782-a7a0-18e6c427b24b" />
+
+Blog Post Page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/68607860-9535-455b-bdae-94e0cb64e138" />
+
+Dashboard Page
+<img width="1920" height="1080" alt="Screenshot 2025-09-28 031535" src="https://github.com/user-attachments/assets/e12ba353-23bb-4bd3-8a46-4b0308f891fc" />
+
 
 ## 🛠️ Tech Stack
 
