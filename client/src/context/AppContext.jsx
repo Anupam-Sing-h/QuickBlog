@@ -5,7 +5,8 @@ import toast from 'react-hot-toast';
 
 //Createing a custom Axios instance
 const axios = axiosLib.create({
-  baseURL: 'http://localhost:3000',
+  //baseURL: 'http://localhost:3000',
+  baseURL: import.meta.env.VITE_BASE_URL,
   withCredentials: true,
 });
 
